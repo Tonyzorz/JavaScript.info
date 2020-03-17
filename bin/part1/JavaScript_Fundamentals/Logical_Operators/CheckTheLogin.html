@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		"use strict";
+		let login = prompt("Who's there?");
+		
+		if(login == "Admin"){
+			
+			let password = prompt("Password?");
+			
+			if(password == "TheMaster"){
+				alert("Welcome!");
+			} else if(password == "" || password == null){
+				alert("Canceled");
+			} else {
+				alert("Wrong password");
+			}
+			
+		} else if (login == "" || login == null){
+			alert("Canceled");
+		} else {
+			alert("I don't know you");
+		}
+	</script>
+</body>
+</html>

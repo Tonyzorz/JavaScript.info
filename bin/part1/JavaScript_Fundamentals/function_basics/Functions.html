@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script>
+		"use strict";
+		//Function min(a,b), write a function returning least of two num
+		function min(a, b){
+			return (a <= b) ? a : b;  
+		}
+		
+		//Function pow(x,n), return x in power n
+		function pow(x,n){
+			let poweredNumber = x;
+			
+			for(let i = 1; i < n; i++){
+				poweredNumber *= x;
+			}
+			
+			return poweredNumber;
+		}
+		alert(pow(3,3));
+	</script>
+</body>
+</html>
