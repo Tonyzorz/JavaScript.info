@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//video 23 getelementbytagname
+	function changeStyling(){
+		var para = document.getElementsByTagName("p");
+		alert(JSON.stringify(para));
+		para[0].style.color = "blue";
+	}
+//video 24 getElementByClassName
+	function changeStylingName(){
+		var element = document.getElementsByClassName("mypara");
+		for(var i = 0, n = element.length; i < n; i++){
+			element[i].style.color = "pink";
+		}
+	}
+// video 25 change image mouseover & mouseout event
+	function setNewImage(){
+		document.getElementById("img1").src = "maxresdefault.jpg";
+	}
+	
+	function setOldImage(){
+		document.getElementById("img1").src = "ChrisHeria.jpg";
+	}
+</script> 
+</head>
+<body>
+	<h6>video 23</h6>
+	<p>This is a paragraph 1</p>
+	<p>This is a paragraph 2</p>
+	<p>This is a paragraph 3</p>
+	<button onclick="changeStyling()">Click</button>
+	<h6>video 24</h6>
+	<p class="mypara">this is paragraph 1</p>
+	<p class="mypara">this is paragraph 2</p>
+	<button onclick="changeStylingName()">Click</button>
+	<h6>video 25</h6>
+	<img id="img1" src="ChrisHeria.jpg" onmouseover="setNewImage()" onmouseout="setOldImage()">
+</body>
+</html>

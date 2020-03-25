@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function validate(){
+		var username = document.getElementById("uname").value;
+		var password = document.getElementById("upass").value;
+		
+/* 		var regx = /E00/gi; */
+/* 		var regx = new RegExp("E00", "gi"); */
+		var regx = /[^a-zA-Z]imple/gi;
+		/* if(username.trim() == "" || password.trim() == ""){
+			alert("no blank values allowed");
+			return false;
+		} else if(username.trim().length < 5){
+			document.getElementById("unameDetail").style.visibility = "visible";
+			return false;
+		} else if(password.trim().length < 5){
+			return false;
+		}  */
+		/* 
+		^[5-9]\w{8}0$
+		5abcdefgh0
+
+		1st character has to be between 5-9
+		next 8 characters have to between  a-z
+		last character has to be 0  
+		*/
+		
+		
+		if(regx.test(username)){
+			alert("correct regex!");
+			
+		} else {
+			document.getElementById("unameDetail").style.visibility = "visible";
+			return false;
+		}
+		
+	}
+	
+	
+	function emailValidation(){
+		var emailRegex = new RegExp("^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,8})(.[a-z]{2,8})?$", "i");
+		var emails = document.getElementById("email").value;
+		
+		if(emailRegex.test(emails)){
+			document.getElementById("emailText").innerHTML = "correct";
+			document.getElementById("emailText").style.visibility = "visible";
+			document.getElementById("emailText").style.color = "green";
+		} else {
+			document.getElementById("emailText").innerHTML = "incorrect";
+			document.getElementById("emailText").style.visibility = "visible";
+			document.getElementById("emailText").style.color = "red";
+		}
+	}
+</script>
+</head>
+<body>
+	<form onsubmit="return validate()" action="welcome.html">
+		<input id="uname" placeholder="Username" type="text" required>
+		<label id="unameDetail" style="color: red; visibility: hidden">invalid</label><br>
+		<input id="upass" placeholder="password" type="text" required><br>
+		<input type="submit" value="click">
+	</form>
+	<input type="text" id="email" placeholder="email">
+	<label id="emailText" style="visibility: hidden"></label><br>
+	<button onclick="emailValidation()">email Validation</button>
+</body>
+</html>
