@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../jquery.js"></script>
+<script src="../jqueryui/jquery-ui.js"></script>
+<link rel="stylesheet" href="../jqueryui/jquery-ui.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.structure.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.theme.css">
+</head>
+<body>
+<div id="mydiv">
+	<h3>ToolTip in jQuery UI</h3>
+	<img src="../../../ChrisHeria.jpg" width="100px" title="telusko" id="myimg">
+</div>
+</body>
+<script>
+	$("#myimg").tooltip({
+		track:true,
+		content:"Telusko is the best",
+		show: {
+			effect: "highlight",
+			duration: 2000,
+		},
+		hide: {
+			effect: "explode",
+			duration: 500,
+		}
+	});
+</script>
+</html>

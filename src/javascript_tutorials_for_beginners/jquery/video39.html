@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js"></script>
+<link rel="stylesheet" href="style.css">
+<script>
+	
+$(document).ready(function(){
+	var i = document.getElementById("firstdiv");
+	console.log(i);
+	
+	$('#btn1').click(function(){
+		$('#p1').attr('class', 'p2class');
+
+	});
+	
+	$('#btn2').click(function(){
+		alert($('#p1').attr('class'));
+	});
+	/* $('button').dblclick(function(){
+		$('#firstdiv').fadeToggle();
+	}); */
+	
+	//mouseenter, mouseleave, hover
+	
+	/* $('#btn1').click(function(){
+		$('#firstdiv').hide();
+	});
+	$('#btn2').click(function(){
+		$('#firstdiv').show();
+	}); */
+	
+/* 	$('#btn3').click(function(){
+		$('#firstdiv').toggle();
+	}) */
+	
+	$('#btn3').click(function(){
+		var cube = document.getElementsByClassName('mycube');
+		$(cube).animate({
+			left: '150px',
+			opacity: '1',
+			width: '60px',
+			height: '60px'
+		},1000)
+	});
+	
+	var i = 0;
+	
+	$('#appending').click(function(){
+		
+		alert(i);
+ 		$('#firstdiv').append("<p>" + i + "</p>");
+		i++;
+	});
+});
+	
+	
+</script>
+</head>
+<body>
+
+	<h2>Events in jQuery</h2>
+	<p>This is a paragraph outside div</p>
+	<button id="appending">append </button>
+	<button id="btn1">Set value</button>
+	<button id="btn2">Get value</button>
+	<button id="btn3">click3</button>
+	<div class="mycube"></div>
+	<div id="firstdiv" class="mydivs">
+		<p id="p1" class="tempClass">This is first paragraph in first division</p>
+	</div>
+	<div id="seconddiv" class="mydivs">
+		<ul>
+			<li>2</li>
+		</ul>
+	</div>
+	
+	
+</body>
+
+</html>

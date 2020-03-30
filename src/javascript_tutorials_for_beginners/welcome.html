@@ -3,8 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+//33 video timing functions
+/* 1. setTimeout() allows you to execute statements once
+2. clearTimeout() method clears a timer set
+3. setInterval() allows you to execute statements repeatedly 
+4. clearInterval() clears interval  */
+var id = 0;
+var seconds = 0;
+function printMsg(){
+	document.getElementById("op").innerHTML = seconds + " seoncds 5 second have passed";
+	seconds += 0.1;
+}
+
+function start(){
+	id = window.setInterval(printMsg, 100);
+	
+}
+
+function stop(){
+	window.clearTimeout(id);
+}
+
+//video 34 fade in fade out animation
+var opacity = 0;
+var intervalID = 0;
+function fadeOut(){
+	intervalID = setInterval(hide, 20);
+}
+
+function fadeIn(){
+	intervalID = setInterval(show, 20);
+}
+
+function hide(){
+	var imgId = document.getElementById("img1");
+
+	opacity = Number(window.getComputedStyle(imgId).getPropertyValue("opacity"));
+	if(opacity > 0){
+		opacity -= 0.1;
+		imgId.style.opacity = opacity;
+	} else {
+		clearInterval(intervalID);
+	}
+}
+
+function show(){
+	var imgId = document.getElementById("img1");
+
+	opacity = Number(window.getComputedStyle(imgId).getPropertyValue("opacity"));
+	if(opacity < 1){
+		opacity += 0.1;
+		imgId.style.opacity = opacity;
+	} else {
+		clearInterval(intervalID);
+	}
+}
+
+//video 35 zoom in zoom out
+var width = 100;
+var difference = 2;
+var video35id;
+function increase(){
+	clearInterval(video35id);
+	video35id = setInterval(zoomIn, 20);
+}
+function zoomIn(){
+	if(width<200){
+		width += difference;
+		document.getElementById("video35").width = width;
+		console.log(width);
+	} else {
+		clearInterval(video35id);
+	}
+}
+function decrease(){
+	clearInterval(video35id);
+	video35id = setInterval(zoomOut, 20);
+}
+
+function zoomOut(){
+	if(width > 100){
+		width -= difference;
+		document.getElementById("video35").width = width;
+		console.log(width);
+	}else{
+		clearInterval(video35id);
+	}
+}
+</script>
 </head>
 <body>
 	<h2>welcome</h2>
+	<button onclick="start()" id="btnAdd">Start</button>
+		<h2 id="op">Some text</h2>
+	<button onclick="stop()" id="btnStop">Stop</button>
+	<hr>
+	<button onclick="fadeOut()" id="fadeOut">Fade out</button>
+	<img id="img1" src="maxresdefault.jpg" width="100px" height="100px">
+	<button onclick="fadeIn()" id="fadeIn">Fade In</button>
+	<hr>
+	<img onmouseover="increase()" onmouseout="decrease()" src="maxresdefault.jpg"  id="video35" width="100">
+	
 </body>
 </html>

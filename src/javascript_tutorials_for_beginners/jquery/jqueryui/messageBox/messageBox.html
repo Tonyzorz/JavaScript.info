@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../jquery.js"></script>
+<script src="../jqueryui/jquery-ui.js"></script>
+<link rel="stylesheet" href="../jqueryui/jquery-ui.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.structure.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.theme.css">
+</head>
+<body>
+	<h2>Meesage Box in jQuery UI</h2>
+	<div id="firstdiv" class="mydivs">
+		<h3>Hello welcome to Telusko Learnings</h3>
+		<br>
+		<button id="btn1">Click to show message box</button>
+	</div>
+
+	<div id="messagebox" title="Messagebox" class="mydivs" >
+		<h3>This is just a dummy title</h3>
+		<img src="../../../ChrisHeria.jpg" width="100px"><br>
+		<button>click me</button>
+	</div>
+</body>
+<script>
+	$("#btn1").click(function(){
+		$("#messagebox").dialog({
+			title: "Please turn off ad-blocker",
+			draggable: false,
+			resizeable: true,
+			modal: true,
+		});
+	})
+</script>
+</html>

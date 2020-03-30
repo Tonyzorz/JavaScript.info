@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../jquery.js"></script>
+<script src="../jqueryui/jquery-ui.js"></script>
+<link rel="stylesheet" href="../jqueryui/jquery-ui.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.structure.css">
+<link rel="stylesheet" href="../jqueryui/jquery-ui.theme.css">
+</head>
+<body>
+<div id="mydiv">
+	<h3>Accordion Example</h3>
+	<div id="panels">
+		<h2>Telusko Learning</h2>
+		<p>Whatever goes here and what not</p>
+		
+		<h2>Simple snip</h2>
+		<p>Whatever goes here and what not<br>
+		Whatever goes here and what not<br>
+		Whatever goes here and what not<br>
+		Whatever goes here and what not<br></p>
+		
+		<h2>What to dog</h2>
+		<p>Whatever goes here and what not</p>
+	</div>
+</div>
+</body>
+<script>
+	$("#panels").accordion({
+		collapsible: true,
+		event:"click",
+		animate: 300,
+		active: null,
+		heightStyle: true,
+		icons: {
+			header: "ui-icon-plus",
+			activeHeader: "ui-icon-minus",
+		}
+	});
+</script>
+</html>
